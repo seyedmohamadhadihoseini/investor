@@ -1,0 +1,84 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Person {
+  id            Int            @id @default(autoincrement())
+  firstName     String
+  lastName      String
+  nationalId    String         @unique
+  phoneNumber   String?
+  bankAccount   String?        @unique
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  investments   Contract[]     @relation("InvestorContracts")
+  referrals     Contract[]     @relation("ReferrerContracts")
+  commissions   Commission[]
+  profitRecords ProfitRecord[]
+  depositFiles  DepositFile[]
+}
+
+model Contract {
+  id               Int            @id @default(autoincrement())
+  investorId       Int
+  investor         Person         @relation("InvestorContracts", fields: [investorId], references: [id])
+  referrerId       Int?
+  referrer         Person?        @relation("ReferrerContracts", fields: [referrerId], references: [id])
+  contractDate     DateTime
+  contractType     String
+  investmentAmount BigInt
+  profitPercentage Float
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
+  profitRecords    ProfitRecord[]
+  commissions      Commission[]
+}
+
+model ProfitRecord {
+  id         Int    @id @default(autoincrement())
+  investorId Int
+  investor   Person @relation(fields: [investorId], references: [id])
+  contractId Int
+  contract Contract @relation(fields: [contractId], references: [id])
+  profitAmount BigInt
+  paymentDate DateTime
+  isPaid Boolean @default(false)
+  nextPaymentDate DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Commission {
+  id Int @id @default(autoincrement())
+  referrerId Int
+  referrer Person @relation(fields: [referrerId], references: [id])
+  contractId Int
+  contract Contract @relation(fields: [contractId], references: [id])
+  commissionPercentage Float
+  commissionAmount BigInt
+  paymentDate DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model DepositFile {
+  id Int @id @default(autoincrement())
+  investorId Int
+  investor Person @relation(fields: [investorId], references: [id])
+  month String
+  fileUrl String
+  uploadDate DateTime @default(now())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
