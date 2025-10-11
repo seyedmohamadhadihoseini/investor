@@ -5,21 +5,24 @@ import { useRouter } from "next/navigation";
 import { Contract, Person } from "@prisma/client";
 import { useDispatch } from "react-redux";
 import { setDialogObjectId, SetDialogOpen, SetDialogType } from "@/redux/features/dialog/dialogSlice";
+import { ShiftDate } from "@/lib/date/dateUtils";
 export default function PersonDataTable({ people }: { people: (Person & { referrers: Person[] } & { investments: Contract[] })[] }) {
     const router = useRouter()
     const dispatch = useDispatch()
-    const minDate = people.map(item => item.createdAt).reduce((acc, item) => {
+    let minDate = people.map(item => item.createdAt).reduce((acc, item) => {
         if (item.getTime() <= acc) {
             return item.getTime();
         }
         return acc;
     }, Infinity)
-    const maxDate = people.map(item => item.createdAt).reduce((acc, item) => {
+    let maxDate = people.map(item => item.createdAt).reduce((acc, item) => {
         if (item.getTime() >= acc) {
             return item.getTime();
         }
         return acc;
     }, 0)
+    minDate = minDate == Infinity ? ShiftDate(new Date(),-30).getTime():minDate;
+    maxDate = maxDate == Infinity ? ShiftDate(new Date(),1).getTime():maxDate;
     const data = people.map(person => ({
         _id: person.id,
         nationalId: person.nationalId,
