@@ -13,10 +13,11 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     serverActions: {
-      allowedOrigins: ["localhost", "invest.zanity.net"],
+      allowedOrigins: ["localhost", "invest.zanity.net","*invest.zanity.net"],
       bodySizeLimit: '20mb'
     },
-  }
+  },
+  allowedDevOrigins: ["invest.zanity.net", "*invest.zanity.net"]
 };
 
 export default nextConfig;
