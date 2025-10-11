@@ -22,7 +22,7 @@ export default function PersonDataTable({ people }: { people: (Person & { referr
         return acc;
     }, 0)
     minDate = minDate == Infinity ? ShiftDate(new Date(),-30).getTime():minDate;
-    maxDate = maxDate == Infinity ? ShiftDate(new Date(),1).getTime():maxDate;
+    maxDate = maxDate == 0 ? ShiftDate(new Date(),1).getTime():maxDate;
     const data = people.map(person => ({
         _id: person.id,
         nationalId: person.nationalId,
