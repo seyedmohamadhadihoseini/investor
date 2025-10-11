@@ -6,6 +6,7 @@ import { Contract, Person } from "@prisma/client";
 import { useDispatch } from "react-redux";
 import { setDialogObjectId, SetDialogOpen, SetDialogType } from "@/redux/features/dialog/dialogSlice";
 import { ShiftDate } from "@/lib/date/dateUtils";
+import { makeForceUpdate } from "@/redux/features/panel/panelSlice";
 export default function PersonDataTable({ people }: { people: (Person & { referrers: Person[] } & { investments: Contract[] })[] }) {
     const router = useRouter()
     const dispatch = useDispatch()
@@ -66,6 +67,7 @@ export default function PersonDataTable({ people }: { people: (Person & { referr
             }}
             removeFunction={async (id: string) => {
                 await RemoveUserServerAction(id);
+                dispatch(makeForceUpdate());
                 router.refresh();
             }}
             onRowClick={() => {

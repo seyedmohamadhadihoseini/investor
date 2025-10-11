@@ -42,10 +42,10 @@ export function columns(headers: { title: string, value: string }[],
                 const end_date = new Date(filterValue[1]).getTime()
                 const value = new Date(row.getValue(columnId) as Date).getTime();
 
-                console.log(`1- ${filterValue[0].toLocaleDateString("fa-ir")}`)
-                console.log(`2- ${filterValue[1].toLocaleDateString("fa-ir")}`)
-                console.log((new Date(row.getValue(columnId)).toLocaleDateString("fa-ir") ))
-                console.log(columnId)
+                // console.log(`1- ${filterValue[0].toLocaleDateString("fa-ir")}`)
+                // console.log(`2- ${filterValue[1].toLocaleDateString("fa-ir")}`)
+                // console.log((new Date(row.getValue(columnId)).toLocaleDateString("fa-ir") ))
+                // console.log(columnId)
                 return value >= start_date && value <= end_date
             },
             header:()=>{

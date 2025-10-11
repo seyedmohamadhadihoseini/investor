@@ -1,14 +1,21 @@
 
-
-import prisma from "@/services/prisma";
+"use client"
+import { useEffect, useState } from "react";
 import PersonDataTable from "./PersonDataTable";
+import { Contract, Person } from "@prisma/client";
+import { GetAllPeople } from "@/server";
+import { useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
 
 
 
 
-export default async function Home() {
-
-  const people = await prisma.person.findMany({ include: { investments: true ,referrers:true} });
+export default function Home() {
+  const [people, setPeople] = useState<(Person & { referrers: Person[] } & { investments: Contract[] })[]>([]);
+  const ForceUpdate = useSelector((state: RootState) => state.panel.ForceUpdate);
+  useEffect(() => {
+    GetAllPeople().then(setPeople);
+  }, [ForceUpdate])
   return (
     <PersonDataTable people={people} />
   );

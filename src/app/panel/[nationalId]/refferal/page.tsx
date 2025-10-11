@@ -13,7 +13,7 @@ export default async function ReferralContracts({ params }: { params: Promise<{ 
             parentReferrerId: person.nationalId
         }, include: { investments: true }
     })
-    console.log(subPersons)
+    // console.log(subPersons)
 
     return (
         <div className={style.container}>
