@@ -1,0 +1,10 @@
+.ispaidselect select{
+    padding: 8px;
+    width: 100%;
+    
+    
+}   
+.ispaidselect> div{
+    border: 2xp solid blue;
+    border-radius: 8px;
+}

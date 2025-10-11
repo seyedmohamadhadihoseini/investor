@@ -1,0 +1,24 @@
+
+.operation{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 10px;
+}
+.operation button{
+    padding: 5px;
+    
+    color: aliceblue;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.dialog-form >div{
+    margin-top: 7px;
+}
+.dialog-form input{
+    width: 100%;
+    padding: 8px;
+    border: 1px solid gray;
+    border-radius: 8px;
+}

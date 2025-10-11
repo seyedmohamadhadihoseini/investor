@@ -1,3 +1,26 @@
-.container{
+.container {
     direction: rtl;
+
+}
+
+.active-row {
+    background-color: aqua;
+}
+
+.date-container {
+    padding: 5px;
+    width: 100%;
+    display: flex;
+}
+
+/* .date-container > div{
+    
+} */
+
+.date-container input {
+    width: 100%;
+}
+.date-container label{
+    color: black;
+    font-size: 13px;
 }

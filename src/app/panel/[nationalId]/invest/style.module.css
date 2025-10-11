@@ -1,0 +1,10 @@
+.container{
+    height: 100dvh;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+.profit-record{
+    margin-top: -10px;
+}

@@ -8,7 +8,7 @@ export const sideSlice = createSlice({
   reducers: {
     
     changePath: (state, action:PayloadAction<string>) => {
-      state.path = state.path;
+      state.path = action.payload;
     },
   },
 })

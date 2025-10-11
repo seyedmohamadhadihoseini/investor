@@ -1,6 +1,9 @@
+
+import ReduxProvider from "@/redux/store";
 import "./globals.css";
 import type { Metadata } from "next";
-
+import { Toaster } from 'react-hot-toast';
+import DialogContent from "@/components/dialog/DialogContents";
 
 export const metadata: Metadata = {
   title: "investor",
@@ -13,9 +16,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fa" dir="rtl">
       <body>
-        {children}
+        <ReduxProvider>
+          {children}
+          <DialogContent />
+        </ReduxProvider>
+        <Toaster />
+
       </body>
     </html>
   );

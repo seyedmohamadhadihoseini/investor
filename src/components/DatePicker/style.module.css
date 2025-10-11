@@ -1,0 +1,18 @@
+.rmdp-input-container{
+    width: 100%;
+}
+.rmdp-input {
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 8px;
+    width: 100%;
+    margin-left: 0;
+}
+.picker-today-button{
+    margin: 5px;
+    padding: 8px;
+    
+    border-radius: 8px;
+    text-align: center;
+    background-color: rgb(74, 154, 224);
+}
