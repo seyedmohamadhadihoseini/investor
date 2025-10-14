@@ -5,14 +5,14 @@ export default async function AddNewPersonServerAction(prevState: { id: number, 
     const FullName = formData.get("full-name") as string;
     const nationalId = formData.get("national-id") as string;
     const phoneNumber = formData.get("phone") as string;
-    const bankAccount = formData.get("bank-account") as string;
+    
     const parentReferrerId = formData.get("referrer-national-id");
     let success = true;
     try {
 
         await prisma.person.create({
             data: {
-                nationalId, FullName, bankAccount, phoneNumber, parentReferrerId:parentReferrerId?parentReferrerId as string:null
+                nationalId, FullName, phoneNumber, parentReferrerId:parentReferrerId?parentReferrerId as string:null
             }
         })
     }

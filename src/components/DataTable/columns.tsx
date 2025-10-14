@@ -3,7 +3,7 @@
 import { ColumnDef } from "@tanstack/react-table"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from "../ui/dropdown-menu"
 import { Button } from "../ui/button"
-import { Divide, MoreHorizontal } from "lucide-react"
+import {  MoreHorizontal } from "lucide-react"
 
 
 
@@ -16,11 +16,13 @@ export type HeaderType = {
 }
 export function columns(headers: { title: string, value: string }[],
     isShowEditButton: boolean, isShowRemoveButton: boolean, isShowProfile: boolean,
-    removeFunction: (id: string) => void, editFunction: (id: string) => void, goProfileFunction: (id: string) => void,
-    isContainsDate?: boolean
+    removeFunction: (id: string) => void, editFunction: (id: string) => void, goProfileFunction?: (id: string) => void,
+    isContainsDate?: boolean, 
 ): ColumnDef<HeaderType>[] {
 
-    const ingoresList = ["_id", "url", "date"]
+    let ingoresList = ["_id", "url", "date"]
+    
+
     const TableHeaders: ColumnDef<HeaderType>[] = headers.filter(item => !ingoresList.includes(item.value)).map(item => ({
         accessorKey: item.value,
         header: () => {
@@ -36,19 +38,14 @@ export function columns(headers: { title: string, value: string }[],
     if (isContainsDate) {
         TableHeaders.push({
             id: "date",
-            accessorKey:"date",
+            accessorKey: "date",
             filterFn: (row, columnId, filterValue: [Date, Date]) => {
                 const start_date = new Date(filterValue[0]).getTime()
                 const end_date = new Date(filterValue[1]).getTime()
                 const value = new Date(row.getValue(columnId) as Date).getTime();
-
-                // console.log(`1- ${filterValue[0].toLocaleDateString("fa-ir")}`)
-                // console.log(`2- ${filterValue[1].toLocaleDateString("fa-ir")}`)
-                // console.log((new Date(row.getValue(columnId)).toLocaleDateString("fa-ir") ))
-                // console.log(columnId)
                 return value >= start_date && value <= end_date
             },
-            header:()=>{
+            header: () => {
                 return <div className="text-center">تاریخ</div>
             },
             cell: ({ row }) => {
@@ -95,7 +92,9 @@ export function columns(headers: { title: string, value: string }[],
                             </DropdownMenuItem>}
                             {isShowProfile && <DropdownMenuItem >
                                 <p className="w-[100%] text-center cursor-pointer" onClick={() => {
-                                    goProfileFunction(id)
+                                    if (goProfileFunction) {
+                                        goProfileFunction(id)
+                                    }
                                 }}>
                                     مشاهده پروفایل
                                 </p>

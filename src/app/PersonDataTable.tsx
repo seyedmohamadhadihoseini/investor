@@ -2,12 +2,12 @@
 import DataListComponent from "@/components/DataTable";
 import { RemoveUserServerAction } from "../server";
 import { useRouter } from "next/navigation";
-import { Contract, Person } from "@prisma/client";
+import { BankAccount, Contract, Person } from "@prisma/client";
 import { useDispatch } from "react-redux";
 import { setDialogObjectId, SetDialogOpen, SetDialogType } from "@/redux/features/dialog/dialogSlice";
 import { ShiftDate } from "@/lib/date/dateUtils";
 import { makeForceUpdate } from "@/redux/features/panel/panelSlice";
-export default function PersonDataTable({ people }: { people: (Person & { referrers: Person[] } & { investments: Contract[] })[] }) {
+export default function PersonDataTable({ people }: { people: (Person & { referrers: Person[] } & { investments: Contract[] } & { bankAccounts: BankAccount[] })[] }) {
     const router = useRouter()
     const dispatch = useDispatch()
     let minDate = people.map(item => item.createdAt).reduce((acc, item) => {
@@ -22,8 +22,8 @@ export default function PersonDataTable({ people }: { people: (Person & { referr
         }
         return acc;
     }, 0)
-    minDate = minDate == Infinity ? ShiftDate(new Date(),-30).getTime():minDate;
-    maxDate = maxDate == 0 ? ShiftDate(new Date(),1).getTime():maxDate;
+    minDate = minDate == Infinity ? ShiftDate(new Date(), -30).getTime() : minDate;
+    maxDate = maxDate == 0 ? ShiftDate(new Date(), 1).getTime() : maxDate;
     const data = people.map(person => ({
         _id: person.id,
         nationalId: person.nationalId,
@@ -31,7 +31,9 @@ export default function PersonDataTable({ people }: { people: (Person & { referr
         investorTotalMoney: person.investments.reduce((acc, item) => acc + item.investmentAmount, 0).toString(),
         refferalCount: person.referrers.length,
         phoneNumber: person.phoneNumber || "",
-        bankAccount: person.bankAccount || "",
+        bankAccount: person.bankAccounts.reduce((acc,curr)=>{
+            return `${acc},${curr.number}`
+        },"") || "",
         referrerNationalId: person.parentReferrerId || "",
         date: person.createdAt.toISOString(),
         url: `/panel/${person.nationalId}/invest`
@@ -44,14 +46,14 @@ export default function PersonDataTable({ people }: { people: (Person & { referr
                 { value: "investorTotalMoney", title: "مجموع سرمایه" },
                 { value: "refferalCount", title: "تعداد افراد معرفی شده" },
                 { value: "phoneNumber", title: "شماره تماس" },
-                { value: "bankAccount", title: "شماره حساب" },
                 { value: "referrerNationalId", title: "کد ملی معرف" },
                 { value: "date", title: "تاریخ عضویت" },
+                { value: "bankAccount", title: "account-number" },
                 { value: "url", title: "url" },
                 { value: "_id", title: "id" },
             ]}
             data={data}
-
+            ignoreColumnsToShow={["bankAccount"]}
             isShowAddButton
             isShowEditButton
             isShowRemoveButton

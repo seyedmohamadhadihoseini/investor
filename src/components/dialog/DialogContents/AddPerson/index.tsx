@@ -18,10 +18,6 @@ export default function AddUserDialogFormContent() {
                 <input type="text" name="phone" />
             </div>
             <div>
-                <label>شماره حساب</label>
-                <input type="text" name="bank-account" />
-            </div>
-            <div>
                 <label>کد ملی معرف</label>
                 <input type="text" name="referrer-national-id" />
             </div>

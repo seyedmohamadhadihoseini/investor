@@ -10,7 +10,7 @@ import style from "./style.module.css"
 
 export default function DataListComponent(
     { data, headers, filters, isShowAddButton, isShowEditButton, isShowRemoveButton, isShowProfile,
-        dateFilter,
+        dateFilter,ignoreColumnsToShow,
         goProfileFunction, addFunction, removeFunction, editFunction, onRowClick }:
         {
             data: HeaderType[], headers: { title: string, value: string }[],
@@ -20,7 +20,8 @@ export default function DataListComponent(
                 start_date: Date,
                 end_date: Date,
             },
-            addFunction: () => void, removeFunction: (id: string) => void, editFunction: (id: string) => void, goProfileFunction: (id: string) => void
+            ignoreColumnsToShow?:string[],
+            addFunction: () => void, removeFunction: (id: string) => void, editFunction: (id: string) => void, goProfileFunction?: (id: string) => void
             onRowClick: (id: string) => void,
 
         }) {
@@ -30,11 +31,13 @@ export default function DataListComponent(
         <ReduxDatatabeProvider>
             <div className={`${style.container} container mx-auto py-10 w-[95%]`}>
                 {isShowAddButton && <AddButtonDataTable addFunction={addFunction} />}
-                <DataTable columns={columns(headers, isShowEditButton, isShowRemoveButton, isShowProfile, removeFunction, editFunction, goProfileFunction,dateFilter?true:false)}
+                <DataTable columns={columns(headers, isShowEditButton, isShowRemoveButton, isShowProfile
+                , removeFunction, editFunction, goProfileFunction,dateFilter?true:false)}
                     filters={filters}
                     data={data}
                     dateFilter={dateFilter}
                     onRowClick={onRowClick}
+                    ignoreColumnsToShow={ignoreColumnsToShow}
                 />
             </div>
         </ReduxDatatabeProvider>

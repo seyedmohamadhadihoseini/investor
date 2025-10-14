@@ -11,6 +11,6 @@ export async function GetPersonByNationalId(nationalId: string) {
     return await prisma.person.findUnique({ where: { nationalId } })
 }
 export async function GetAllPeople() {
-    const people = await prisma.person.findMany({ include: { investments: true ,referrers:true} });
+    const people = await prisma.person.findMany({ include: { investments: true ,referrers:true,bankAccounts:true} });
     return people
 }

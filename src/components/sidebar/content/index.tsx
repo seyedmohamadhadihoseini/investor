@@ -15,7 +15,7 @@ export default function ContentSidebarComponent() {
 
 
 
-    const pathList = [{ title: "سرمایه گذاری", href: "invest" }, { title: "معرف", href: "refferal" }].map(item => {
+    const pathList = [{ title: "سرمایه گذاری", href: "invest" }, { title: "معرف", href: "refferal" },{title:"اطلاعات",href:"information"}].map(item => {
         return <SidebarMenuItem key={item.href} className={`${style.itembar} ${routePath == item.href ? style.active : ""}`}>
             <SidebarMenuButton asChild>
                 <Link style={{ cursor: "pointer" }} href={`/panel/${person.person.nationalId}/${item.href}`}>

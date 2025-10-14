@@ -35,6 +35,7 @@ interface DataTableProps<TData, TValue> {
     start_date: Date,
     end_date: Date,
   },
+  ignoreColumnsToShow?: string[],
   onRowClick: (id: string) => void
 }
 
@@ -42,6 +43,7 @@ export function DataTable<TData, TValue>({
   columns,
   data,
   filters,
+  ignoreColumnsToShow,
   dateFilter,
   onRowClick
 }: DataTableProps<TData, TValue>) {
@@ -105,7 +107,8 @@ export function DataTable<TData, TValue>({
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
-                {headerGroup.headers.map((header) => {
+                {headerGroup.headers.filter(header => !ignoreColumnsToShow?.includes(header.id)).map((header) => {
+
                   return (
                     <TableHead key={header.id}>
                       {header.isPlaceholder
@@ -125,6 +128,7 @@ export function DataTable<TData, TValue>({
               table.getRowModel().rows.map((row, index) => {
                 const data = row.original;
                 const id = GetValueFromObject(data, "_id")
+
                 return <TableRow
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
@@ -134,11 +138,15 @@ export function DataTable<TData, TValue>({
                     dispatch(changeSelectedId(id))
                   }}
                 >
-                  {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>
-                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                    </TableCell>
-                  ))}
+                  {row.getVisibleCells().filter(cell => !ignoreColumnsToShow?.find(column => cell.id.includes(column)))
+                    .map((cell) => {
+                      
+                      return (
+                        <TableCell key={cell.id}>
+                          {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                        </TableCell>
+                      )
+                    })}
                 </TableRow>
               })
             ) : (

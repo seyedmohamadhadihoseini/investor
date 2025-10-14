@@ -24,6 +24,10 @@ import EditProfitRecordServerAction from "./EditProfitRecord/server";
 import { makeForceUpdate } from "@/redux/features/panel/panelSlice";
 import EditReferrerProfitRecordDialogFormContent from "./EditReferrerProfitRecord";
 import EditReferrerProfitRecordServerAction from "./EditReferrerProfitRecord/server";
+import AddBankDialogFormContent from "./AddBank";
+import AddNewBankServerAction from "./AddBank/server";
+import EditBankAccountServerAction from "./EditBank/server";
+import EditBankAccountDialogFormContent from "./EditBank";
 export default function DialogContent() {
     const openDialog = useSelector((state: RootState) => state.dialog.open);
     const dispatch = useDispatch()
@@ -81,6 +85,10 @@ function FindServerAction(content: DialogType) {
         return EditProfitRecordServerAction
     } else if (content == "EDIT_REFERRER_PROFIT_RECORD") {
         return EditReferrerProfitRecordServerAction
+    } else if (content == "ADD_BANK") {
+        return AddNewBankServerAction;
+    } else if (content == "EDIT_BANK") {
+        return EditBankAccountServerAction
     }
     return AddNewPersonServerAction;
 }
@@ -98,6 +106,10 @@ function FindFormContent(content: DialogType) {
         return <EditProfitRecordDialogFormContent id={objectId} />
     } else if (content == "EDIT_REFERRER_PROFIT_RECORD") {
         return <EditReferrerProfitRecordDialogFormContent id={objectId} />
+    } else if (content == "ADD_BANK") {
+        return <AddBankDialogFormContent />
+    } else if (content == "EDIT_BANK") {
+        return <EditBankAccountDialogFormContent bankAccountNumber={objectId} />
     }
 
     return null;

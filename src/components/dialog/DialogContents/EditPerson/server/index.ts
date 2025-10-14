@@ -17,7 +17,7 @@ export async function EditPersonServerAction(prevState: { id: number, success: b
                 id
             },
             data: {
-                nationalId, FullName, bankAccount, phoneNumber,parentReferrerId
+                nationalId, FullName, phoneNumber,parentReferrerId
             }
         })
     }

@@ -1,7 +1,7 @@
 "use client"
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 export type DialogType = ""|"ADD_PERSON" | "EDIT_PERSON" | "ADD_CONTRACT"|
-"EDIT_CONTRACT" | "EDIT_PROFITRECORD" | "EDIT_REFERRER_PROFIT_RECORD"
+"EDIT_CONTRACT" | "EDIT_PROFITRECORD" | "EDIT_REFERRER_PROFIT_RECORD" | "ADD_BANK" | "EDIT_BANK"
 type StateType ={
     open:boolean,
     type:DialogType,

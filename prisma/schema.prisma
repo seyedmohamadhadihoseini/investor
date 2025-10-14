@@ -14,17 +14,17 @@ datasource db {
 }
 
 model Person {
-  id               String       @id @default(uuid())
-  nationalId       String       @unique
-  FullName         String
-  phoneNumber      String?
-  bankAccount      String?      @unique
-  createdAt        DateTime     @default(now())
-  updatedAt        DateTime     @updatedAt
+  id          String  @id @default(uuid())
+  nationalId  String  @unique
+  FullName    String
+  phoneNumber String?
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
   parentReferrerId String?
-  parentReferrer   Person?      @relation(name: "ReferrerPerson", fields: [parentReferrerId], references: [nationalId])
-  investments      Contract[]   @relation("InvestorContracts")
-  referrers Person[] @relation(name: "ReferrerPerson")
+  parentReferrer   Person?       @relation(name: "ReferrerPerson", fields: [parentReferrerId], references: [nationalId])
+  investments      Contract[]    @relation("InvestorContracts")
+  referrers        Person[]      @relation(name: "ReferrerPerson")
+  bankAccounts     BankAccount[]
 }
 
 model Contract {
@@ -40,29 +40,36 @@ model Contract {
   referrerPercentage   Float?
   createdAt            DateTime       @default(now())
   updatedAt            DateTime       @updatedAt
-  profitRecords        ProfitRecord[] 
+  profitRecords        ProfitRecord[]
 }
 
 model ProfitRecord {
-  id           String       @id @default(uuid())
-  contractId   String
-  contract     Contract     @relation(fields: [contractId], references: [id], onDelete: Cascade, onUpdate: Cascade)
-  profitAmount Float
-  paymentDate  DateTime
-  isPaid       Boolean      @default(false)
-  isForInvestor Boolean @default(true)
-  createdAt    DateTime     @default(now())
-  updatedAt    DateTime     @updatedAt
-  depositFile  DepositFile?
+  id            String       @id @default(uuid())
+  contractId    String
+  contract      Contract     @relation(fields: [contractId], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  profitAmount  Float
+  paymentDate   DateTime
+  isPaid        Boolean      @default(false)
+  isForInvestor Boolean      @default(true)
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  depositFile   DepositFile?
 }
 
 model DepositFile {
   id             Int          @id @default(autoincrement())
   profitRecordId String       @unique
-  profitRecord   ProfitRecord @relation(fields: [profitRecordId], references: [id],onDelete: Cascade,onUpdate:Cascade)
+  profitRecord   ProfitRecord @relation(fields: [profitRecordId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   month          String
   fileUrl        String
   uploadDate     DateTime     @default(now())
   createdAt      DateTime     @default(now())
   updatedAt      DateTime     @updatedAt
+}
+
+model BankAccount {
+  number    String @id
+  bank_name String
+  person    Person @relation(references: [id], fields: [PersonId])
+  PersonId  String
 }

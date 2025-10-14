@@ -1,7 +1,5 @@
 import { Person } from "@prisma/client";
-import style from "./style.module.css";
-import { useSelector } from "react-redux";
-import { RootState } from "@/redux/store";
+
 import { useEffect, useState } from "react";
 import { GetPerson } from "./server";
 
@@ -25,10 +23,7 @@ export default function EditPersonDialogFormContent({ id }: { id: string }) {
                 <label>شماره تماس</label>
                 <input type="text" name="phone" defaultValue={person?.phoneNumber || ""} />
             </div>
-            <div>
-                <label>شماره حساب</label>
-                <input type="text" name="bank-account" defaultValue={person?.bankAccount || ""} />
-            </div>
+            
             <div>
                 <label>کد ملی معرف</label>
                 <input type="text" name="referrer-national-id" defaultValue={person?.parentReferrerId||""} />
