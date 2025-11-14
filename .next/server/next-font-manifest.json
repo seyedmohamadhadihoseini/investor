@@ -1,0 +1,31 @@
+{
+  "app": {
+    "[project]/src/app/_not-found/page": [
+      "static/media/B_NAZANIN-s.p.32e7ba14.ttf"
+    ],
+    "[project]/src/app/page": [
+      "static/media/B_NAZANIN-s.p.32e7ba14.ttf"
+    ],
+    "[project]/src/app/panel/[nationalId]/information/page": [
+      "static/media/B_NAZANIN-s.p.32e7ba14.ttf"
+    ],
+    "[project]/src/app/panel/[nationalId]/invest/page": [
+      "static/media/B_NAZANIN-s.p.32e7ba14.ttf"
+    ],
+    "[project]/src/app/panel/[nationalId]/page": [
+      "static/media/B_NAZANIN-s.p.32e7ba14.ttf"
+    ],
+    "[project]/src/app/panel/[nationalId]/refferal/page": [
+      "static/media/B_NAZANIN-s.p.32e7ba14.ttf"
+    ],
+    "[project]/src/app/panel/page": [
+      "static/media/B_NAZANIN-s.p.32e7ba14.ttf"
+    ],
+    "[project]/src/app/test/page": [
+      "static/media/B_NAZANIN-s.p.32e7ba14.ttf"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pages": {},
+  "pagesUsingSizeAdjust": false
+}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["turbopack:///[project]/src/app/panel/[nationalId]/page.tsx"],"sourcesContent":["\"use client\"\r\n\r\n\r\n\r\n\r\nexport default  function PersonPanelApp() {\r\n\r\n    return (\r\n        <div>\r\n            خانه\r\n        </div>\r\n    );\r\n}"],"names":[],"mappings":"+EAKgB,SAAS,IAErB,MACI,CAAA,EAAA,EAAA,GAAA,EAAC,MAAA,UAAI,QAIb"}

@@ -1,0 +1,245 @@
+{
+  "node": {
+    "6034ae0092ea93d59be4ce041102cdaf52026b1e1e": {
+      "workers": {
+        "app/page": {
+          "moduleId": "19345",
+          "async": false,
+          "exportedName": "default",
+          "filename": "src/components/dialog/DialogContents/AddPerson/server/index.tsx"
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      },
+      "exportedName": "default",
+      "filename": "src/components/dialog/DialogContents/AddPerson/server/index.tsx"
+    },
+    "60669800982c3bf918019aca33b0329cad474e6d53": {
+      "workers": {
+        "app/page": {
+          "moduleId": "19345",
+          "async": false,
+          "exportedName": "EditPersonServerAction",
+          "filename": "src/components/dialog/DialogContents/EditPerson/server/index.ts"
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      },
+      "exportedName": "EditPersonServerAction",
+      "filename": "src/components/dialog/DialogContents/EditPerson/server/index.ts"
+    },
+    "40e59fbca0a0a4209708818b5fda88c0f553dd4165": {
+      "workers": {
+        "app/page": {
+          "moduleId": "19345",
+          "async": false,
+          "exportedName": "GetPerson",
+          "filename": "src/components/dialog/DialogContents/EditPerson/server/index.ts"
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      },
+      "exportedName": "GetPerson",
+      "filename": "src/components/dialog/DialogContents/EditPerson/server/index.ts"
+    },
+    "6009c754eb3c58f21412aff89974e886bd367f889b": {
+      "workers": {
+        "app/page": {
+          "moduleId": "19345",
+          "async": false,
+          "exportedName": "default",
+          "filename": "src/components/dialog/DialogContents/AddContract/server/index.ts"
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      },
+      "exportedName": "default",
+      "filename": "src/components/dialog/DialogContents/AddContract/server/index.ts"
+    },
+    "40171da5769137e46cfa1df6bc255cd450bac81f4d": {
+      "workers": {
+        "app/page": {
+          "moduleId": "19345",
+          "async": false,
+          "exportedName": "GetPersonByNationalId",
+          "filename": "src/server/index.ts"
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      },
+      "exportedName": "GetPersonByNationalId",
+      "filename": "src/server/index.ts"
+    },
+    "40d76bbd7f5fc9b7be63002582f0ce9f99d17d2560": {
+      "workers": {
+        "app/page": {
+          "moduleId": "19345",
+          "async": false,
+          "exportedName": "GetContract",
+          "filename": "src/components/dialog/DialogContents/EditContract/server/index.ts"
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      },
+      "exportedName": "GetContract",
+      "filename": "src/components/dialog/DialogContents/EditContract/server/index.ts"
+    },
+    "60deb3f3715c4476dfa9a4a5f1b5798ae0a4a90caf": {
+      "workers": {
+        "app/page": {
+          "moduleId": "19345",
+          "async": false,
+          "exportedName": "default",
+          "filename": "src/components/dialog/DialogContents/EditContract/server/index.ts"
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      },
+      "exportedName": "default",
+      "filename": "src/components/dialog/DialogContents/EditContract/server/index.ts"
+    },
+    "408ee4c70b3b27153b65c0111c0a194511c1a21a4c": {
+      "workers": {
+        "app/page": {
+          "moduleId": "19345",
+          "async": false,
+          "exportedName": "GetProfitRecord",
+          "filename": "src/components/dialog/DialogContents/EditProfitRecord/server/index.ts"
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      },
+      "exportedName": "GetProfitRecord",
+      "filename": "src/components/dialog/DialogContents/EditProfitRecord/server/index.ts"
+    },
+    "603ce1458bf853a7609f1b30999c0ba73e10aa60d3": {
+      "workers": {
+        "app/page": {
+          "moduleId": "19345",
+          "async": false,
+          "exportedName": "default",
+          "filename": "src/components/dialog/DialogContents/EditProfitRecord/server/index.ts"
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      },
+      "exportedName": "default",
+      "filename": "src/components/dialog/DialogContents/EditProfitRecord/server/index.ts"
+    },
+    "40dd5ac62ac76c2097ba12437819510f36eaca23d0": {
+      "workers": {
+        "app/page": {
+          "moduleId": "19345",
+          "async": false,
+          "exportedName": "GetProfitRecord",
+          "filename": "src/components/dialog/DialogContents/EditReferrerProfitRecord/server/index.ts"
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      },
+      "exportedName": "GetProfitRecord",
+      "filename": "src/components/dialog/DialogContents/EditReferrerProfitRecord/server/index.ts"
+    },
+    "606a8c2360da01d8017e7a46faae52a412e59ba2db": {
+      "workers": {
+        "app/page": {
+          "moduleId": "19345",
+          "async": false,
+          "exportedName": "default",
+          "filename": "src/components/dialog/DialogContents/EditReferrerProfitRecord/server/index.ts"
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      },
+      "exportedName": "default",
+      "filename": "src/components/dialog/DialogContents/EditReferrerProfitRecord/server/index.ts"
+    },
+    "6087b6b66b8c87b0287098e18bcf165504e2715edd": {
+      "workers": {
+        "app/page": {
+          "moduleId": "19345",
+          "async": false,
+          "exportedName": "default",
+          "filename": "src/components/dialog/DialogContents/AddBank/server/index.tsx"
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      },
+      "exportedName": "default",
+      "filename": "src/components/dialog/DialogContents/AddBank/server/index.tsx"
+    },
+    "60fb3888afa44022e8ab1c9b60a5a9d3da9ddae029": {
+      "workers": {
+        "app/page": {
+          "moduleId": "19345",
+          "async": false,
+          "exportedName": "default",
+          "filename": "src/components/dialog/DialogContents/EditBank/server/index.tsx"
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      },
+      "exportedName": "default",
+      "filename": "src/components/dialog/DialogContents/EditBank/server/index.tsx"
+    },
+    "4082be4e3d5a72d87d8734a4323011de2dfcd91caa": {
+      "workers": {
+        "app/page": {
+          "moduleId": "19345",
+          "async": false,
+          "exportedName": "GetBankAccount",
+          "filename": "src/components/dialog/DialogContents/EditBank/server/index.tsx"
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      },
+      "exportedName": "GetBankAccount",
+      "filename": "src/components/dialog/DialogContents/EditBank/server/index.tsx"
+    },
+    "40da44113965f6f1193a1664934d18712e322289a5": {
+      "workers": {
+        "app/page": {
+          "moduleId": "19345",
+          "async": false,
+          "exportedName": "RemoveUserServerAction",
+          "filename": "src/server/index.ts"
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      },
+      "exportedName": "RemoveUserServerAction",
+      "filename": "src/server/index.ts"
+    },
+    "00078d01cc677dfd72a61256569ad4f2a15452738a": {
+      "workers": {
+        "app/page": {
+          "moduleId": "19345",
+          "async": false,
+          "exportedName": "GetAllPeople",
+          "filename": "src/server/index.ts"
+        }
+      },
+      "layer": {
+        "app/page": "action-browser"
+      },
+      "exportedName": "GetAllPeople",
+      "filename": "src/server/index.ts"
+    }
+  },
+  "edge": {}
+}
