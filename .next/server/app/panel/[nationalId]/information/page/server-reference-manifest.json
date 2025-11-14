@@ -1,0 +1,245 @@
+{
+  "node": {
+    "60aabd961ba24d75e19d01260c46052b392cf214e1": {
+      "workers": {
+        "app/panel/[nationalId]/information/page": {
+          "moduleId": "57333",
+          "async": false,
+          "exportedName": "default",
+          "filename": "src/components/dialog/DialogContents/AddPerson/server/index.tsx"
+        }
+      },
+      "layer": {
+        "app/panel/[nationalId]/information/page": "action-browser"
+      },
+      "exportedName": "default",
+      "filename": "src/components/dialog/DialogContents/AddPerson/server/index.tsx"
+    },
+    "6069068667b17d08f6ab28599a88b94c7f3c02cba9": {
+      "workers": {
+        "app/panel/[nationalId]/information/page": {
+          "moduleId": "57333",
+          "async": false,
+          "exportedName": "EditPersonServerAction",
+          "filename": "src/components/dialog/DialogContents/EditPerson/server/index.ts"
+        }
+      },
+      "layer": {
+        "app/panel/[nationalId]/information/page": "action-browser"
+      },
+      "exportedName": "EditPersonServerAction",
+      "filename": "src/components/dialog/DialogContents/EditPerson/server/index.ts"
+    },
+    "402bf3963acf17c85d094c5b393a5d628f5fe8ee02": {
+      "workers": {
+        "app/panel/[nationalId]/information/page": {
+          "moduleId": "57333",
+          "async": false,
+          "exportedName": "GetPerson",
+          "filename": "src/components/dialog/DialogContents/EditPerson/server/index.ts"
+        }
+      },
+      "layer": {
+        "app/panel/[nationalId]/information/page": "action-browser"
+      },
+      "exportedName": "GetPerson",
+      "filename": "src/components/dialog/DialogContents/EditPerson/server/index.ts"
+    },
+    "6018a63a2062147154d27f013a900ba127eb7ec07a": {
+      "workers": {
+        "app/panel/[nationalId]/information/page": {
+          "moduleId": "57333",
+          "async": false,
+          "exportedName": "default",
+          "filename": "src/components/dialog/DialogContents/AddContract/server/index.ts"
+        }
+      },
+      "layer": {
+        "app/panel/[nationalId]/information/page": "action-browser"
+      },
+      "exportedName": "default",
+      "filename": "src/components/dialog/DialogContents/AddContract/server/index.ts"
+    },
+    "409a0db41f753c0f6afbb1470301296347927fca6d": {
+      "workers": {
+        "app/panel/[nationalId]/information/page": {
+          "moduleId": "57333",
+          "async": false,
+          "exportedName": "GetPersonByNationalId",
+          "filename": "src/server/index.ts"
+        }
+      },
+      "layer": {
+        "app/panel/[nationalId]/information/page": "action-browser"
+      },
+      "exportedName": "GetPersonByNationalId",
+      "filename": "src/server/index.ts"
+    },
+    "408a489844d50487c1abe79249beeca02de0b13e14": {
+      "workers": {
+        "app/panel/[nationalId]/information/page": {
+          "moduleId": "57333",
+          "async": false,
+          "exportedName": "GetContract",
+          "filename": "src/components/dialog/DialogContents/EditContract/server/index.ts"
+        }
+      },
+      "layer": {
+        "app/panel/[nationalId]/information/page": "action-browser"
+      },
+      "exportedName": "GetContract",
+      "filename": "src/components/dialog/DialogContents/EditContract/server/index.ts"
+    },
+    "60b9802f5f61cc50ff56e700241f80a97a18b21c2a": {
+      "workers": {
+        "app/panel/[nationalId]/information/page": {
+          "moduleId": "57333",
+          "async": false,
+          "exportedName": "default",
+          "filename": "src/components/dialog/DialogContents/EditContract/server/index.ts"
+        }
+      },
+      "layer": {
+        "app/panel/[nationalId]/information/page": "action-browser"
+      },
+      "exportedName": "default",
+      "filename": "src/components/dialog/DialogContents/EditContract/server/index.ts"
+    },
+    "401ebc0e3d7e3938e82e020c80a8bfadac47c604a5": {
+      "workers": {
+        "app/panel/[nationalId]/information/page": {
+          "moduleId": "57333",
+          "async": false,
+          "exportedName": "GetProfitRecord",
+          "filename": "src/components/dialog/DialogContents/EditProfitRecord/server/index.ts"
+        }
+      },
+      "layer": {
+        "app/panel/[nationalId]/information/page": "action-browser"
+      },
+      "exportedName": "GetProfitRecord",
+      "filename": "src/components/dialog/DialogContents/EditProfitRecord/server/index.ts"
+    },
+    "60f0306937b9d16d83d1cc47b40dd0f1457dafd833": {
+      "workers": {
+        "app/panel/[nationalId]/information/page": {
+          "moduleId": "57333",
+          "async": false,
+          "exportedName": "default",
+          "filename": "src/components/dialog/DialogContents/EditProfitRecord/server/index.ts"
+        }
+      },
+      "layer": {
+        "app/panel/[nationalId]/information/page": "action-browser"
+      },
+      "exportedName": "default",
+      "filename": "src/components/dialog/DialogContents/EditProfitRecord/server/index.ts"
+    },
+    "408489e26f1a1862e37cf1061e2f21a547c66b079a": {
+      "workers": {
+        "app/panel/[nationalId]/information/page": {
+          "moduleId": "57333",
+          "async": false,
+          "exportedName": "GetProfitRecord",
+          "filename": "src/components/dialog/DialogContents/EditReferrerProfitRecord/server/index.ts"
+        }
+      },
+      "layer": {
+        "app/panel/[nationalId]/information/page": "action-browser"
+      },
+      "exportedName": "GetProfitRecord",
+      "filename": "src/components/dialog/DialogContents/EditReferrerProfitRecord/server/index.ts"
+    },
+    "601bc487c89020530666062c0c374cbe5ccea624b4": {
+      "workers": {
+        "app/panel/[nationalId]/information/page": {
+          "moduleId": "57333",
+          "async": false,
+          "exportedName": "default",
+          "filename": "src/components/dialog/DialogContents/EditReferrerProfitRecord/server/index.ts"
+        }
+      },
+      "layer": {
+        "app/panel/[nationalId]/information/page": "action-browser"
+      },
+      "exportedName": "default",
+      "filename": "src/components/dialog/DialogContents/EditReferrerProfitRecord/server/index.ts"
+    },
+    "60d319f51c6b37642cf6c413e4af07c66c8e4eb540": {
+      "workers": {
+        "app/panel/[nationalId]/information/page": {
+          "moduleId": "57333",
+          "async": false,
+          "exportedName": "default",
+          "filename": "src/components/dialog/DialogContents/AddBank/server/index.tsx"
+        }
+      },
+      "layer": {
+        "app/panel/[nationalId]/information/page": "action-browser"
+      },
+      "exportedName": "default",
+      "filename": "src/components/dialog/DialogContents/AddBank/server/index.tsx"
+    },
+    "60c0223189b82b5f5514dc35d5418f113574f3c7d9": {
+      "workers": {
+        "app/panel/[nationalId]/information/page": {
+          "moduleId": "57333",
+          "async": false,
+          "exportedName": "default",
+          "filename": "src/components/dialog/DialogContents/EditBank/server/index.tsx"
+        }
+      },
+      "layer": {
+        "app/panel/[nationalId]/information/page": "action-browser"
+      },
+      "exportedName": "default",
+      "filename": "src/components/dialog/DialogContents/EditBank/server/index.tsx"
+    },
+    "4041caa87bd7dfa3d8bf4f4e7bedd97f0394682d37": {
+      "workers": {
+        "app/panel/[nationalId]/information/page": {
+          "moduleId": "57333",
+          "async": false,
+          "exportedName": "GetBankAccount",
+          "filename": "src/components/dialog/DialogContents/EditBank/server/index.tsx"
+        }
+      },
+      "layer": {
+        "app/panel/[nationalId]/information/page": "action-browser"
+      },
+      "exportedName": "GetBankAccount",
+      "filename": "src/components/dialog/DialogContents/EditBank/server/index.tsx"
+    },
+    "403d7caaa51f609b3d9d3e8a3c396a3d0a947801df": {
+      "workers": {
+        "app/panel/[nationalId]/information/page": {
+          "moduleId": "57333",
+          "async": false,
+          "exportedName": "RemoveBankAccount",
+          "filename": "src/app/panel/[nationalId]/information/server/index.ts"
+        }
+      },
+      "layer": {
+        "app/panel/[nationalId]/information/page": "action-browser"
+      },
+      "exportedName": "RemoveBankAccount",
+      "filename": "src/app/panel/[nationalId]/information/server/index.ts"
+    },
+    "401b266df379d9274047116e16baf03db532c6ffbf": {
+      "workers": {
+        "app/panel/[nationalId]/information/page": {
+          "moduleId": "57333",
+          "async": false,
+          "exportedName": "GetBankAccounts",
+          "filename": "src/app/panel/[nationalId]/information/server/index.ts"
+        }
+      },
+      "layer": {
+        "app/panel/[nationalId]/information/page": "action-browser"
+      },
+      "exportedName": "GetBankAccounts",
+      "filename": "src/app/panel/[nationalId]/information/server/index.ts"
+    }
+  },
+  "edge": {}
+}
