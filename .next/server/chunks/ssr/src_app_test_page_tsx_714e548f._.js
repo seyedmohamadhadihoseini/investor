@@ -1,3 +1,0 @@
-module.exports=[73951,a=>{"use strict";a.s(["default",()=>e],73951);var b=a.i(62255),c=a.i(87031);let d=(0,c.createServerReference)("603e85b7cfcc1243529e3e1475ce7d8f7cb283039b",c.callServer,void 0,c.findSourceMapURL,"default");function e(){return(0,b.jsx)("div",{children:(0,b.jsx)("button",{onClick:async()=>{await d()},children:"ok"})})}}];
-
-//# sourceMappingURL=src_app_test_page_tsx_714e548f._.js.map
